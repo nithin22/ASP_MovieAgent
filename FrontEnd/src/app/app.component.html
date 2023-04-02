@@ -1,0 +1,23 @@
+<body>
+<h3>INTELLIGENT BOT</h3>
+
+<div class="container">
+  <div class="card" >
+    <div class="chat-list" #chatListContainer>
+      <ng-container *ngFor="let item of chatMessages">
+      <div class="chat-item left"
+      [ngClass]="{'right':item?.user?.id == currentUser.id,'left':item?.user?.id!=
+    currentUser.id}">
+        <img id="avatar" [src]="item?.user?.profileImageUrl"/>
+        <p id="message-body">{{item.messages}}</p>
+        <span id="time-details">{{item?.created_at| date:'shortTime'}}</span>
+        </div>
+      </ng-container>
+    </div>
+    <div class="chat-footer">
+      <textarea id="chat-text" [(ngModel)]="chatInput"></textarea>
+      <button id="send-button" (click)="send()" [disabled]="chatInput.length<=0">Send</button>
+    </div>
+  </div>
+</div>
+</body>
