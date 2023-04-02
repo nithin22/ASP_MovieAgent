@@ -37,11 +37,11 @@ export class ChatComponent implements OnInit {
         messages: "Hii, How can I help you?",
         created_at: Date.now()
       },
-      {
-        user: this.currentUser,
-        messages: "We should go on a vacation",
-        created_at: Date.now()
-      },
+      // {
+      //   user: this.currentUser,
+      //   messages: "We should go on a vacation",
+      //   created_at: Date.now()
+      // },
     ];
 
   ngAfterViewChecked() {
